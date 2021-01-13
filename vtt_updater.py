@@ -57,8 +57,8 @@ class VTT_XML_legacy_updater:
                     assembly_content.append(line)
                 child.find("instructions//assembly").text = "\n".join(assembly_content)
 
-    def write(self, save_to: Union[Path, str]):
-        self.tree.write(str(save_to))
+    def write(self, save_as: Union[Path, str]):
+        self.tree.write(str(save_as))
 
 
 class VTT_updater:
@@ -223,9 +223,9 @@ class VTT_updater:
         self.update_table_entries()
         return None
 
-    def write(self, save_to: Union[Path, str, bool] = None) -> None:
-        if save_to:
-            self.font_new.save(str(save_to))
+    def write(self, save_as: Union[Path, str, bool] = None) -> None:
+        if save_as:
+            self.font_new.save(str(save_as))
         else:
             self.font_new.save(str(self.font_new.path))
         return None
@@ -268,7 +268,7 @@ A path to a TTF in which you want to import the VTT data
     )
     parser.add_argument(
         "-s",
-        "--save_to",
+        "--save_as",
         help="""\
 A path where you want to output the updated file. 
 Not setting it rewrites the. Don't set if you want your new font to be rewritten.
@@ -305,4 +305,4 @@ XML file exported in VTT. You find it in VTT, File > Export > All code to XML...
         project = VTT_XML_legacy_updater(args.font_old, args.font_new)
 
     project.update()
-    project.save(args.save_to)
+    project.save(args.save_as)

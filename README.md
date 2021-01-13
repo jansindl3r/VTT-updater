@@ -2,6 +2,8 @@
 
 ## Copies VTT instructions from old file into new one...
 
+`python vtt_updater.py source/VTT/font.ttf source/VTT/exported.ttf --save_as source/VTT/updated.ttf`
+
 ### What is VTT?
 VTT is a tool for creating complex and powerful TrueType hinting in the best possible way. TrueType hinting is becoming least relevant every year, the community is becoming smaller and smaller and xxxx. There has been a discussion whether it should be open sourced and it looks that it might get one day! VTT has runs on Windows recently we got commandline interface for it and some voices on typedrawers.
 
@@ -20,9 +22,9 @@ VTT-updater has lived for some years, I learnt how to code a bit better and how 
 ### How do I start?
 1. Having Python installed is the first step, make sure you have it. There are plenty of tutorials already out there. This tool won't run without it. Make sure it works on your machine, you can test it by opening your terminal, typing `python` or `python 3` and hitting `enter`. 
 1. You need to have `fontTools` installed. If you don't have it yet, run command `[python/python3] -m pip install fonttools`
-1. Run `vtt_updater` by navigating to where you copied this repository and run `[python/python3] Lib/vtt_updater.py vtt.ttf exported.ttf`
+1. Run `vtt_updater` by navigating to where you copied this repository and run `[python/python3] vtt_updater.py where/my/folder/vtt.ttf where/my/folder/exported.ttf`
 
-### Ok, I got it. How do I control it, so it works with my fonts?
+### Ok, I got it. How do I control it, that it works with my fonts?
 there are two positional arguments
 1. Path to a font containing VTT instructions  
 1. Path to a font in which you want to import the instructions
